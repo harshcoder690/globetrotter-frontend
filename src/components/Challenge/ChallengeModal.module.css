@@ -1,0 +1,187 @@
+/* Global fix for box-sizing (if allowed in CSS Modules) */
+:global(*) {
+    box-sizing: border-box;
+  }
+  :global(*):before,
+  :global(*):after {
+    box-sizing: border-box;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+  }
+  
+  .modal {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Form Layout */
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Heading */
+  .heading {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+    font-size: 1.75rem;
+  }
+  
+  /* Input Group */
+  .inputGroup {
+    margin-bottom: 1rem;
+  }
+  
+  /* Input Field */
+  .input {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #2196F3;
+  }
+  
+  /* Error Message */
+  .error {
+    color: #dc3545;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Button Group */
+  .buttonGroup {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Generic button styling */
+  .button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* Primary button (e.g., submit) */
+  .primary {
+    background: #2196F3;
+    color: #fff;
+  }
+  .primary:hover:not(:disabled) {
+    background: #1976D2;
+  }
+  .primary:disabled {
+    background: #b0bec5;
+    cursor: not-allowed;
+  }
+  
+  /* Secondary button (e.g., cancel/close) */
+  .secondary {
+    background: #f5f5f5;
+    color: #333;
+  }
+  .secondary:hover {
+    background: #ddd;
+  }
+  
+  /* Share Content Layout */
+  .shareContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Preview Section */
+  .preview {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  /* Preview Image */
+  .previewImage {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Share Text */
+  .shareText {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Share Link */
+  .shareLink {
+    color: #2196F3;
+    text-decoration: none;
+  }
+  .shareLink:hover {
+    text-decoration: underline;
+  }
+  
+  /* Share Buttons Container */
+  .shareButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  /* WhatsApp button */
+  .whatsapp {
+    background: #25d366;
+    color: #fff;
+  }
+  .whatsapp:hover {
+    background: #128c7e;
+  }
+  
