@@ -49,6 +49,7 @@ export const Game = ({ challengeId }: { challengeId?: string }) => {
 
   const loadNewChallenge = async () => {
     try {
+      setChallenge(null);
       const { data } = await httpService.get<ChallengeData>(ApiConfig.endpoints.new_challenge);
       setChallenge(data);
       setFeedback(null);
