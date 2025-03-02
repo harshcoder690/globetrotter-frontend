@@ -140,7 +140,7 @@ export const Game = ({ challengeId }: { challengeId?: string }) => {
       )}
 
       {showChallengeModal && (
-        <ChallengeModal onClose={() => setShowChallengeModal(false)} />
+        <ChallengeModal onClose={() => setShowChallengeModal(false)} score={score}/>
       )}
     </div>
   );

@@ -8,7 +8,7 @@ interface ShareData {
   imageUrl: string;
 }
 
-export const ChallengeModal = ({ onClose }: { onClose: () => void }) => {
+export const ChallengeModal = ({ onClose, score }: { onClose: () => void, score: number }) => {
   const [username, setUsername] = useState("");
   const [shareData, setShareData] = useState<ShareData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -21,7 +21,7 @@ export const ChallengeModal = ({ onClose }: { onClose: () => void }) => {
     setError(null);
     try {
       // Check username availability
-      await httpService.post(ApiConfig.endpoints.register, { username });
+      await httpService.post(ApiConfig.endpoints.register, { username, score });
       // Generate challenge link
       const { data } = await httpService.post(ApiConfig.endpoints.generate, { username });
       setShareData(data);
